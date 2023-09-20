@@ -5,4 +5,15 @@
     <string name="txt_hora">12:41</string>
     <string name="btn_cadastro">Cadastro de Novo Usuário</string>
     <string name="btnVoltar">VOLTAR</string>
+    <string name="ckTermos">Li e concordo com os termos de uso.</string>
+    <string name="btnCadastrar">CADASTRAR</string>
+    <string name="editSenhaB">Confirme a senha digitada…</string>
+    <string name="txtSenhaB">Repita sua senha</string>
+    <string name="editSenhaA">Informe uma senha…</string>
+    <string name="txtSenhaA">Senha</string>
+    <string name="editEmail">Digite seu melhor e-mail…</string>
+    <string name="txtEmail">Email</string>
+    <string name="editNome">Digite su primeiro nome…</string>
+    <string name="txtNome">Nome</string>
+    <string name="TxtTitulo">Cadastro</string>
 </resources>

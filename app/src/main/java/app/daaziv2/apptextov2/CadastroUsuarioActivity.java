@@ -9,16 +9,16 @@ import android.widget.Button;
 
 public class CadastroUsuarioActivity extends AppCompatActivity {
 
-    Button btnVoltar;
+    Button btnCadastrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_usuario);
 
-        btnVoltar = findViewById(R.id.btnVoltar);
+        btnCadastrar = findViewById(R.id.btnCadastrar);
 
-        btnVoltar.setOnClickListener(new View.OnClickListener() {
+        btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
