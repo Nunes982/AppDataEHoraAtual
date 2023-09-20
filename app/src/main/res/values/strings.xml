@@ -3,4 +3,6 @@
     <string name="txt_titulo">Aplicativo do Anderson</string>
     <string name="txt_data">19/09/2023</string>
     <string name="txt_hora">12:41</string>
+    <string name="btn_cadastro">Cadastro de Novo Usuário</string>
+    <string name="btnVoltar">VOLTAR</string>
 </resources>
