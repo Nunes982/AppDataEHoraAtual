@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "app.daazi.apptextov1"
+    namespace = "app.daaziv2.apptextov2"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "app.daazi.apptextov1"
+        applicationId = "app.daaziv2.apptextov2"
         minSdk = 26
         targetSdk = 33
         versionCode = 1

@@ -1,11 +1,11 @@
-package app.daazi.apptextov1;
+package app.daaziv2.apptextov2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
-import app.daazi.apptextov1.api.AppUtil;
+import app.daaziv2.apptextov2.api.AppUtil;
 
 public class MainActivity extends AppCompatActivity {
 
