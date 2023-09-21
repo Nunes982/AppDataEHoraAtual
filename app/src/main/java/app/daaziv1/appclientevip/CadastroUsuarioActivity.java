@@ -1,6 +1,5 @@
-package app.daaziv2.apptextov2;
+package app.daaziv1.appclientevip;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +9,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class CadastroUsuarioActivity extends AppCompatActivity {
 

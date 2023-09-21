@@ -17,7 +17,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="24dp"
-        android:text="@string/TxtTitulo"
+        android:text="@string/txtTitulo"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="36sp"

@@ -1,6 +1,5 @@
-package app.daaziv2.apptextov2;
+package app.daaziv1.appclientevip;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import app.daaziv2.apptextov2.api.AppUtil;
+import androidx.appcompat.app.AppCompatActivity;
+
+import app.daaziv1.appclientevip.api.AppUtil;
 
 public class MainActivity extends AppCompatActivity {
 

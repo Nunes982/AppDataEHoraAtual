@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">AppTextoV2</string>
+    <string name="app_name">App Clientes Vip</string>
     <string name="txt_titulo">Aplicativo do Anderson</string>
     <string name="txt_data">19/09/2023</string>
     <string name="txt_hora">12:41</string>
 
     <!-- To layout Cadastro -->
-    <string name="btn_cadastro">Cadastro de Novo Usuário</string>
+    <string name="btnCadastro">Cadastro de Novo Usuário</string>
     <string name="btnVoltar">VOLTAR</string>
     <string name="ckTermos">Li e concordo com os termos de uso.</string>
     <string name="btnCadastrar">CADASTRAR</string>
@@ -17,5 +17,18 @@
     <string name="txtEmail">Email</string>
     <string name="editNome">Digite su primeiro nome…</string>
     <string name="txtNome">Nome</string>
-    <string name="TxtTitulo">Cadastro</string>
+    <string name="txtTitulo">Cadastro</string>
+
+    <!--Tela Login -->
+    <string name="txtLogin">Login</string>
+    <string name="editEmailLogin">Digite seu e-mail cadastrado…</string>
+    <string name="txtSenhaLogin">Senha</string>
+    <string name="editSenhaLogin">Digite sua senha de acesso…</string>
+    <string name="ckLembrarLogin">Lembrar</string>
+    <string name="txtRecuperarSenhaLogin">Recuperar Senha</string>
+    <string name="btnAcessarLogin">ACESSAR</string>
+    <string name="btnSejaVipLogin">SEJA VIP</string>
+    <string name="txtVersaoApp">Versão V1.0</string>
+    <string name="txtLerPolitica"><![CDATA[Ler Politica de Privacidade & Termos de Uso.]]></string>
+
 </resources>

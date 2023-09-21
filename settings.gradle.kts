@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "AppTextoV2"
+rootProject.name = "AppClienteVip"
 include(":app")
  

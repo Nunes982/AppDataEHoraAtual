@@ -1,4 +1,5 @@
-package app.daaziv2.apptextov2.api;
+package app.daaziv1.appclientevip.api;
+
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -13,6 +14,9 @@ import java.util.Date;
  * Versão v1
  */
 public class AppUtil {
+
+    public static final int TIME_SPLASH = 5 * 1000;
+
     /**
      *
      * @return devolve a data atual
