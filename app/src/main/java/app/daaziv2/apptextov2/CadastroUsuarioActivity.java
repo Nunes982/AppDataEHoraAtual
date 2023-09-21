@@ -79,6 +79,8 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                         Intent iMenuPrincipal = new Intent(CadastroUsuarioActivity.this, MainActivity.class);
                         startActivity(iMenuPrincipal);
 
+                        Toast.makeText(getApplicationContext(), "Usuário Cadastrado com Sucesso...", Toast.LENGTH_LONG).show();
+
                     }
 
                 }
