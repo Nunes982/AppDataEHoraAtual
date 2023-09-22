@@ -1,4 +1,4 @@
-package app.daaziv1.appclientevip;
+package app.daaziv1.appclientevip.view;
 
 
 import android.content.Intent;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import app.daaziv1.appclientevip.R;
 import app.daaziv1.appclientevip.api.AppUtil;
 
 public class MainActivity extends AppCompatActivity {

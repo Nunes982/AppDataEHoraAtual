@@ -6,7 +6,7 @@
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp"
     android:orientation="vertical"
-    tools:context=".SplashActivity">
+    tools:context=".view.LoginActivity">
 
     <TextView
         android:id="@+id/txtAppName"
@@ -38,8 +38,7 @@
         android:textSize="36sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/txtEmailLogin"
+    <TextView android:id="@+id/txtEmailLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -49,8 +48,7 @@
         android:text="@string/txtEmail"
         android:textColor="@color/green" />
 
-    <EditText
-        android:id="@+id/editEmailLogin"
+    <EditText android:id="@+id/editEmailLogin"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_gravity="center_horizontal"
@@ -61,8 +59,7 @@
         android:inputType="textEmailAddress"
         android:textColorHint="@color/black" />
 
-    <TextView
-        android:id="@+id/txtSenhaLogin"
+    <TextView android:id="@+id/txtSenhaLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -72,8 +69,7 @@
         android:text="@string/txtSenhaLogin"
         android:textColor="@color/green" />
 
-    <EditText
-        android:id="@+id/editSenhaLogin"
+    <EditText android:id="@+id/editSenhaLogin"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_gravity="center_horizontal"
@@ -91,20 +87,19 @@
         android:baselineAligned="true"
         android:orientation="horizontal">
 
-        <CheckBox
-            android:id="@+id/ckLembrarLogin"
+        <CheckBox android:id="@+id/ckLembrarLogin"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="5dp"
             android:layout_weight="1"
             android:padding="9dp"
+            android:onClick="lembrarSenha"
             android:text="@string/ckLembrarLogin"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/txtRecuperarSenhaLogin"
+        <TextView android:id="@+id/txtRecuperarSenhaLogin"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
@@ -124,24 +119,24 @@
         android:baselineAligned="true"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnAcessarLogin"
+        <Button android:id="@+id/btnAcessarLogin"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="5dp"
+            android:layout_marginRight="8dp"
             android:layout_weight="1"
             android:backgroundTint="@color/lightBlue"
             android:padding="8dp"
             android:text="@string/btnAcessarLogin"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnSejaVipLogin"
+        <Button android:id="@+id/btnSejaVipLogin"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="5dp"
+            android:layout_marginLeft="8dp"
             android:layout_weight="1"
             android:backgroundTint="@color/lightBlue"
             android:padding="8dp"
@@ -150,8 +145,7 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/txtVersaoApp"
+    <TextView android:id="@+id/txtVersaoApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -162,8 +156,7 @@
         android:textAlignment="center"
         android:textColor="@color/green" />
 
-    <TextView
-        android:id="@+id/txtLerPolitica"
+    <TextView android:id="@+id/txtLerPolitica"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

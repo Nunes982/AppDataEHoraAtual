@@ -1,4 +1,4 @@
-package app.daaziv1.appclientevip;
+package app.daaziv1.appclientevip.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import app.daaziv1.appclientevip.R;
 import app.daaziv1.appclientevip.api.AppUtil;
 
 public class SplashActivity extends AppCompatActivity {

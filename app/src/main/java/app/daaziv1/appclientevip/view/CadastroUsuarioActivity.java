@@ -1,4 +1,4 @@
-package app.daaziv1.appclientevip;
+package app.daaziv1.appclientevip.view;
 
 
 import android.content.Intent;
@@ -12,8 +12,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import app.daaziv1.appclientevip.R;
+
 public class CadastroUsuarioActivity extends AppCompatActivity {
 
+    // 1º Passo
     Button btnCadastrar;
     EditText editNome;
     EditText editEmail;
@@ -29,12 +32,17 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_usuario);
 
+        //2º Passo
+
         initFormulario();
+
+        //3º Passo
 
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                //4º Passo Validar entradas
                 isFormularioOK = true;
 
                 if (TextUtils.isEmpty(editNome.getText().toString())){
@@ -66,6 +74,8 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                     ckTermo.requestFocus();
                     isFormularioOK = false;
                 }
+
+                // 5º Passo- Depois de tudo OK, mudar de tela
 
                 if (isFormularioOK) {
 
