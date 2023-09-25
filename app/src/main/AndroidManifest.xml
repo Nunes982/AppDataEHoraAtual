@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AppClienteVip"
         tools:targetApi="33">
         <activity
+            android:name=".view.ClienteVip"
+            android:exported="false" />
+        <activity
             android:name=".view.LoginActivity"
             android:exported="false" />
         <activity

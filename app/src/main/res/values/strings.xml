@@ -15,7 +15,7 @@
     <string name="txtSenhaA">Senha</string>
     <string name="editEmail">Digite seu melhor e-mail…</string>
     <string name="txtEmail">Email</string>
-    <string name="editNome">Digite su primeiro nome…</string>
+    <string name="editNome">Digite seu primeiro nome…</string>
     <string name="txtNome">Nome</string>
     <string name="txtTitulo">Cadastro</string>
 
@@ -30,5 +30,16 @@
     <string name="btnSejaVipLogin">SEJA VIP</string>
     <string name="txtVersaoApp">Versão V1.0</string>
     <string name="txtLerPolitica"><![CDATA[Ler Politica de Privacidade & Termos de Uso.]]></string>
+    
+    <!-- tela novo cliente vip -->
+
+    <string name="txtNovoVip">Novo Vip</string>
+    <string name="txtPrimeiroNome">Primeiro Nome</string>
+    <string name="txtSobreNome">Sobre Nome</string>
+    <string name="txtHintSobreNome">Digite seu sobre nome...</string>
+    <string name="ckPessofisica">Pessoa Fisica</string>
+    <string name="btnSalvarContinuar">SALVAR E CONTINUAR</string>
+    <string name="btnCancelar">CANCELAR</string>
+    
 
 </resources>

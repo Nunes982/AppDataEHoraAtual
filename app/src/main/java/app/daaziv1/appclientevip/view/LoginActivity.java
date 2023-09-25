@@ -3,6 +3,7 @@ package app.daaziv1.appclientevip.view;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import app.daaziv1.appclientevip.R;
+import app.daaziv1.appclientevip.api.AppUtil;
 import app.daaziv1.appclientevip.controler.ClienteController;
 import app.daaziv1.appclientevip.model.Cliente;
 
@@ -20,7 +22,9 @@ public class LoginActivity extends AppCompatActivity {
 
     // Declarar Objeto
 
-    Cliente cliente;
+    Cliente clienteFake;
+
+    SharedPreferences preferences;
 
     // 1º Passo a partr do layout
 
@@ -46,8 +50,12 @@ public class LoginActivity extends AppCompatActivity {
                 if (isFormularioOk = validarFormulario()){
 
                     if (validarDadosDoUsuario()){
+
+                        salvarSharedPreferences();
+
                         Intent intent =
                                 new Intent(LoginActivity.this, MainActivity.class);
+
                         startActivity(intent);
                         finish();
                     }
@@ -61,6 +69,14 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
             }
+        });
+
+        btnSejaVipLogin.setOnClickListener(v -> {
+
+            Intent intent = new Intent(LoginActivity.this, ClienteVip.class);
+            startActivity(intent);
+            finish();
+
         });
 
         txtRecuperarSenhaLogin.setOnClickListener(new View.OnClickListener() {
@@ -118,6 +134,11 @@ public class LoginActivity extends AppCompatActivity {
 
         isFormularioOk = false;
 
+        clienteFake = ClienteController.getClienteFake();
+
+        salvarSharedPreferences();
+        restaurarSharedPreferences();
+
     }
 
     public void lembrarSenha(View view) {
@@ -128,7 +149,33 @@ public class LoginActivity extends AppCompatActivity {
 
     public boolean validarDadosDoUsuario(){
 
-        return ClienteController.validarDadosDoCliente();
+        return ClienteController.validarDadosDoCliente(clienteFake,
+                editEmailLogin.getText().toString(),
+                editSenhaLogin.getText().toString());
 
     }
+
+    private void salvarSharedPreferences() {
+
+        preferences = getSharedPreferences(AppUtil.PRE_APP, MODE_PRIVATE);
+        SharedPreferences.Editor dados = preferences.edit();
+
+        // Adicionando dados no SharedPreferences
+
+//        dados.putBoolean("loginAutomativo", isLembrarSenha );
+//        dados.putString("emailCliente", editEmailLogin.getText().toString());
+//        dados.putString("senhaCliente", editSenhaLogin.getText().toString());
+//
+//        dados.apply();
+
+    }
+
+    private void restaurarSharedPreferences() {
+
+        preferences = getSharedPreferences(AppUtil.PRE_APP, MODE_PRIVATE);
+        isLembrarSenha = preferences.getBoolean("loginAutomativo", false);
+
+    }
+
+
 }
