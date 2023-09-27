@@ -16,7 +16,7 @@ import app.daaziv1.appclientevip.R;
 import app.daaziv1.appclientevip.api.AppUtil;
 import app.daaziv1.appclientevip.model.Cliente;
 
-public class ClienteVip extends AppCompatActivity {
+public class ClienteVipActivity extends AppCompatActivity {
 
     // Declarar Objetos
     Cliente novoVip;
@@ -41,7 +41,7 @@ public class ClienteVip extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (isFormularioOk = validarFormulario()){
+                if (isFormularioOk == validarFormulario()){
 
                     novoVip.setPrimeiroNome(editPrimeiroNome.getText().toString());
                     novoVip.setSobreNome(editSobreNome.getText().toString());
@@ -53,17 +53,16 @@ public class ClienteVip extends AppCompatActivity {
 
                         // Tela de Cadastro do CPF
 
-                        Intent intent = new Intent(ClienteVip.this, ClientePessoaFisica.class);
+                        Intent intent = new Intent(ClienteVipActivity.this, ClientePessoaFisicaActivity.class);
                         startActivity(intent);
-                        finish();
+
 
                     }else{
 
                         // Tela de cadastro de CNPJ
 
-                        Intent intent = new Intent(ClienteVip.this, ClientePessoaJuridica.class);
+                        Intent intent = new Intent(ClienteVipActivity.this, ClientePessoaJuridicaActivity.class);
                         startActivity(intent);
-                        finish();
 
                     }
 

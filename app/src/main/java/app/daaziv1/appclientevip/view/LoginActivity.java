@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
 
         btnSejaVipLogin.setOnClickListener(v -> {
 
-            Intent intent = new Intent(LoginActivity.this, ClienteVip.class);
+            Intent intent = new Intent(LoginActivity.this, ClienteVipActivity.class);
             startActivity(intent);
             finish();
 
@@ -87,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
                         "Carregando tela de recuperação de senha...",
                         Toast.LENGTH_LONG).show();
 
-                Intent intent = new Intent(LoginActivity.this, RecuperarSenha.class);
+                Intent intent = new Intent(LoginActivity.this, RecuperarSenhaActivity.class);
                 startActivity(intent);
                 finish();
 
