@@ -1,6 +1,5 @@
 package app.daaziv1.appclientevip.view;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,7 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import app.daaziv1.appclientevip.R;
 import app.daaziv1.appclientevip.api.AppUtil;
@@ -53,9 +53,17 @@ public class ClienteVip extends AppCompatActivity {
 
                         // Tela de Cadastro do CPF
 
+                        Intent intent = new Intent(ClienteVip.this, ClientePessoaFisica.class);
+                        startActivity(intent);
+                        finish();
+
                     }else{
 
                         // Tela de cadastro de CNPJ
+
+                        Intent intent = new Intent(ClienteVip.this, ClientePessoaJuridica.class);
+                        startActivity(intent);
+                        finish();
 
                     }
 
@@ -71,7 +79,7 @@ public class ClienteVip extends AppCompatActivity {
         editSobreNome = findViewById(R.id.editSobreNome);
         ckPessofisica = findViewById(R.id.ckPessofisica);
         btnSalvarContinuar = findViewById(R.id.btnSalvarContinuar);
-        btnCancelar = findViewById(R.id.btnCancelar);
+        btnCancelar = findViewById(R.id.btnCancelarPessoaFisica);
 
         isFormularioOk = false;
 

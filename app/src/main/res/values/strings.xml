@@ -30,7 +30,7 @@
     <string name="btnSejaVipLogin">SEJA VIP</string>
     <string name="txtVersaoApp">Versão V1.0</string>
     <string name="txtLerPolitica"><![CDATA[Ler Politica de Privacidade & Termos de Uso.]]></string>
-    
+
     <!-- tela novo cliente vip -->
 
     <string name="txtNovoVip">Novo Vip</string>
@@ -40,6 +40,26 @@
     <string name="ckPessofisica">Pessoa Fisica</string>
     <string name="btnSalvarContinuar">SALVAR E CONTINUAR</string>
     <string name="btnCancelar">CANCELAR</string>
-    
+
+    <!-- tela novo cliente vip pessoa fisica-->
+    <string name="txtPessoaFisica">Pessoa Física</string>
+    <string name="txtCPF">CPF</string>
+    <string name="editCPF">Digite seu CPF...</string>
+    <string name="txtNomeCompleto">Pessoa Física</string>
+    <string name="editNomeCompleto">Nome completo igual no CPF...</string>
+    <string name="btnSalvarConcluir">SALVAR E CONCLUIR</string>
+    <string name="btnVoltarClienteVip">VOLTAR</string>
+    <string name="btnCancelarPessoaFisica">Cancelar</string>
+
+    <!-- tela novo cliente vip pessoa juridica-->
+    <string name="txtPessoaJuridica">Pessoa Juridica</string>
+    <string name="txtCNPJ">CNPJ</string>
+    <string name="editCNPJ">Digite seu CNPJ...</string>
+    <string name="txtRazaoSocial">Razão Social</string>
+    <string name="editRazaoSocial">Razão Social igual no CNPJ...</string>
+    <string name="txtDataAbertura">Data de Abertura da Empresa</string>
+    <string name="editDataAbertura">dd/mm/aaaa</string>
+    <string name="ckSimplesNaciona">Simples Nacional</string>
+    <string name="ckMEI">MEI</string>
 
 </resources>
