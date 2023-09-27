@@ -54,7 +54,7 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="@string/editCPF"
-        android:inputType="text"
+        android:inputType="number"
         android:textColorHint="@color/black" />
 
     <TextView android:id="@+id/txtNomeCompleto"
