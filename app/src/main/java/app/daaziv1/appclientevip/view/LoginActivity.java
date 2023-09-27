@@ -87,6 +87,10 @@ public class LoginActivity extends AppCompatActivity {
                         "Carregando tela de recuperação de senha...",
                         Toast.LENGTH_LONG).show();
 
+                Intent intent = new Intent(LoginActivity.this, RecuperarSenha.class);
+                startActivity(intent);
+                finish();
+
             }
         });
 

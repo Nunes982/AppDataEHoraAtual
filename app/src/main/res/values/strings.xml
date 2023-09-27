@@ -41,7 +41,7 @@
     <string name="btnSalvarContinuar">SALVAR E CONTINUAR</string>
     <string name="btnCancelar">CANCELAR</string>
 
-    <!-- tela novo cliente vip pessoa fisica-->
+    <!-- tela cliente pessoa fisica-->
     <string name="txtPessoaFisica">Pessoa Física</string>
     <string name="txtCPF">CPF</string>
     <string name="editCPF">Digite seu CPF...</string>
@@ -51,7 +51,7 @@
     <string name="btnVoltarClienteVip">VOLTAR</string>
     <string name="btnCancelarPessoaFisica">Cancelar</string>
 
-    <!-- tela novo cliente vip pessoa juridica-->
+    <!-- tela cliente pessoa juridica-->
     <string name="txtPessoaJuridica">Pessoa Juridica</string>
     <string name="txtCNPJ">CNPJ</string>
     <string name="editCNPJ">Digite seu CNPJ...</string>
@@ -61,5 +61,13 @@
     <string name="editDataAbertura">dd/mm/aaaa</string>
     <string name="ckSimplesNaciona">Simples Nacional</string>
     <string name="ckMEI">MEI</string>
+
+    <!-- tela recuperar senha -->
+
+    <string name="txtRecuperarSenha">Recuperar Senha</string>
+    <string name="txtEmailRecuperarSenha">E-mail</string>
+    <string name="editEmailRecuperarSenha">Digite o e-mail cadastrado...</string>
+    <string name="btnRecuperarSenha">Recuperar</string>
+    
 
 </resources>

@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AppClienteVip"
         tools:targetApi="33">
         <activity
+            android:name=".view.RecuperarSenha"
+            android:exported="false" />
+        <activity
             android:name=".view.ClientePessoaJuridica"
             android:exported="false" />
         <activity
