@@ -63,7 +63,6 @@ public class SplashActivity extends AppCompatActivity {
         preferences = getSharedPreferences(AppUtil.PRE_APP, MODE_PRIVATE);
         isLembrarSenha = preferences.getBoolean("loginAutomativo", false);
 
-        int teste = 0;
 
     }
 

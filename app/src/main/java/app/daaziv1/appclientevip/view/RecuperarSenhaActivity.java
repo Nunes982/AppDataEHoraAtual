@@ -33,7 +33,7 @@ public class RecuperarSenhaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (isFormularioOk == validarFormulario()){
+                if (isFormularioOk = validarFormulario()){
 
                     Toast.makeText(getApplicationContext(), "Sua senha foi enviada para o e-mail informado...",
                             Toast.LENGTH_LONG).show();

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -41,7 +42,7 @@ public class ClienteVipActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (isFormularioOk == validarFormulario()){
+                if (isFormularioOk = validarFormulario()){
 
                     novoVip.setPrimeiroNome(editPrimeiroNome.getText().toString());
                     novoVip.setSobreNome(editSobreNome.getText().toString());
@@ -89,24 +90,24 @@ public class ClienteVipActivity extends AppCompatActivity {
         restaurarSharedPreferences();
 
     }
-
     public boolean validarFormulario(){
 
-        boolean retorno = true;
+
+        boolean isFormularioOk = true;
 
         if (TextUtils.isEmpty(editPrimeiroNome.getText().toString())){
             editPrimeiroNome.setError("*");
             editPrimeiroNome.requestFocus();
-            retorno = false;
+            isFormularioOk = false;
         }
 
         if (TextUtils.isEmpty(editSobreNome.getText().toString())){
             editSobreNome.setError("*");
             editSobreNome.requestFocus();
-            retorno = false;
+            isFormularioOk = false;
         }
 
-        return retorno;
+        return isFormularioOk;
 
     }
 
