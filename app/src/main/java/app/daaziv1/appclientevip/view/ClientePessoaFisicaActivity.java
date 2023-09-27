@@ -25,7 +25,7 @@ public class ClientePessoaFisicaActivity extends AppCompatActivity {
     private SharedPreferences preferences;
 
     EditText editCPF, editNomeCompleto;
-    Button btnSalvarContinuar, btnVoltarPessoaFisica, btnCancelar;
+    Button btnSalvarContinuarPF, btnVoltarPessoaFisica, btnCancelar;
 
     boolean isFormularioOk;
 
@@ -36,11 +36,11 @@ public class ClientePessoaFisicaActivity extends AppCompatActivity {
 
         initFormulario();
 
-        btnSalvarContinuar.setOnClickListener(new View.OnClickListener() {
+        btnSalvarContinuarPF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (isFormularioOk == validarFormulario()){
+                if (isFormularioOk = validarFormulario()){
 
                     novoClientePF.setCpf(editCPF.getText().toString());
                     novoClientePF.setNomeCompleto(editNomeCompleto.getText().toString());
@@ -49,6 +49,7 @@ public class ClientePessoaFisicaActivity extends AppCompatActivity {
 
                     Intent intent = new Intent(ClientePessoaFisicaActivity.this, LoginActivity.class);
                     startActivity(intent);
+                    finish();
 
                 }
 
@@ -81,7 +82,7 @@ public class ClientePessoaFisicaActivity extends AppCompatActivity {
 
         editCPF = findViewById(R.id.editCPF);
         editNomeCompleto = findViewById(R.id.editNomeCompleto);
-        btnSalvarContinuar = findViewById(R.id.btnSalvarContinuar);
+        btnSalvarContinuarPF = findViewById(R.id.btnSalvarContinuarPF);
         btnVoltarPessoaFisica = findViewById(R.id.btnVoltarPessoaFisica);
         btnCancelar = findViewById(R.id.btnCancelarPessoaFisica);
 

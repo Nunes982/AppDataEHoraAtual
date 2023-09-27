@@ -55,6 +55,7 @@ public class ClienteVipActivity extends AppCompatActivity {
 
                         Intent intent = new Intent(ClienteVipActivity.this, ClientePessoaFisicaActivity.class);
                         startActivity(intent);
+                        finish();
 
 
                     }else{
@@ -63,6 +64,7 @@ public class ClienteVipActivity extends AppCompatActivity {
 
                         Intent intent = new Intent(ClienteVipActivity.this, ClientePessoaJuridicaActivity.class);
                         startActivity(intent);
+                        finish();
 
                     }
 

@@ -40,7 +40,7 @@ public class ClientePessoaJuridicaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (isFormularioOk == validarFormulario()){
+                if (isFormularioOk = validarFormulario()){
 
                     novoClientePJ.setCnpj(editCNPJ.getText().toString());
                     novoClientePJ.setRazaoSocial(editRazaoSocial.getText().toString());
@@ -52,6 +52,7 @@ public class ClientePessoaJuridicaActivity extends AppCompatActivity {
 
                     Intent intent = new Intent(ClientePessoaJuridicaActivity.this, LoginActivity.class);
                     startActivity(intent);
+                    finish();
 
                 }
 
