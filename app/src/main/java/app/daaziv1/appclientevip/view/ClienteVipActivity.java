@@ -1,6 +1,7 @@
 package app.daaziv1.appclientevip.view;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,8 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import app.daaziv1.appclientevip.R;
@@ -70,6 +71,16 @@ public class ClienteVipActivity extends AppCompatActivity {
                     }
 
                 }
+
+            }
+        });
+
+        btnCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //TODO: Create Alertdialog using Builder
+
 
             }
         });
@@ -136,6 +147,4 @@ public class ClienteVipActivity extends AppCompatActivity {
         preferences = getSharedPreferences(AppUtil.PRE_APP, MODE_PRIVATE);
 
     }
-
-
 }

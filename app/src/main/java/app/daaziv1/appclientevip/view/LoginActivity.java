@@ -1,7 +1,6 @@
 package app.daaziv1.appclientevip.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,6 +11,9 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import app.daaziv1.appclientevip.R;
 import app.daaziv1.appclientevip.api.AppUtil;
@@ -47,9 +49,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (isFormularioOk = validarFormulario()){
+                if (isFormularioOk = validarFormulario()) {
 
-                    if (validarDadosDoUsuario()){
+                    if (validarDadosDoUsuario()) {
 
                         salvarSharedPreferences();
 
@@ -60,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                         finish();
                     }
 
-                }else {
+                } else {
 
                     Toast.makeText(getApplicationContext(),
                             "Verifique os dados...",
@@ -98,26 +100,45 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getApplicationContext(),
-                        "Carregando tela com a politica de privacidade...",
-                        Toast.LENGTH_LONG).show();
+                new AlertDialog.Builder(LoginActivity.this)
+                        .setIcon(R.mipmap.ic_launcher_round)
+                        .setMessage("Esta é uma mensagem de exemplo.")
+                        .setTitle("Politica de Privcaxcidade & Termos de Uso")
+                        .setMessage("texto texto texto texto texto texto texto texto texto texto texto texto texto texto")
+                        .setNegativeButton("Discordo", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(LoginActivity.this, "Lamentamos mais é necessário concordar...",
+                                        Toast.LENGTH_SHORT).show();
+                                finish();
+                            }
+                        })
+                        .setPositiveButton("Concordo", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Toast.makeText(LoginActivity.this, "Seja bem vindo e conclua seu login.", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss(); // Fecha o diálogo
+                            }
+                        })
+                        .create().show();
+
 
             }
-        });
 
+        });
     }
+
 
     private boolean validarFormulario() {
 
         boolean retorno = true;
 
-        if (TextUtils.isEmpty(editEmailLogin.getText().toString())){
+        if (TextUtils.isEmpty(editEmailLogin.getText().toString())) {
             editEmailLogin.setError("*");
             editEmailLogin.requestFocus();
             retorno = false;
         }
 
-        if (TextUtils.isEmpty(editSenhaLogin.getText().toString())){
+        if (TextUtils.isEmpty(editSenhaLogin.getText().toString())) {
             editSenhaLogin.setError("*");
             editSenhaLogin.requestFocus();
             retorno = false;
@@ -151,7 +172,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public boolean validarDadosDoUsuario(){
+    public boolean validarDadosDoUsuario() {
 
         return ClienteController.validarDadosDoCliente(clienteFake,
                 editEmailLogin.getText().toString(),
