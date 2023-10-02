@@ -80,7 +80,24 @@ public class ClienteVipActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(ClienteVipActivity.this, "Precionado botão Cancelar", Toast.LENGTH_SHORT).show();
+                new AlertDialog.Builder(ClienteVipActivity.this)
+                        .setIcon(R.mipmap.ic_launcher_round)
+                        .setTitle("Confirme o Cancelamento")
+                        .setMessage("Deseja realmente Cancelar ?")
+                        .setNegativeButton("NÃO", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(ClienteVipActivity.this, "Continue seu Cadastro...",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setPositiveButton("SIM", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Toast.makeText(ClienteVipActivity.this, "Cancelado com sucesso...", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss(); // Fecha o diálogo
+                            }
+                        })
+                        .create().show();
 
 
             }
@@ -93,7 +110,7 @@ public class ClienteVipActivity extends AppCompatActivity {
         editSobreNome = findViewById(R.id.editSobreNome);
         ckPessofisica = findViewById(R.id.ckPessofisica);
         btnSalvarContinuar = findViewById(R.id.btnSalvarContinuar);
-        btnCancelar = findViewById(R.id.btnCancelarPessoaFisica);
+        btnCancelar = findViewById(R.id.btnCancelar);
 
         isFormularioOk = false;
 

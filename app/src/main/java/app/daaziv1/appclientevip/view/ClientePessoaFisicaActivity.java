@@ -1,7 +1,6 @@
 package app.daaziv1.appclientevip.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import app.daaziv1.appclientevip.R;
 import app.daaziv1.appclientevip.api.AppUtil;
@@ -70,8 +72,24 @@ public class ClientePessoaFisicaActivity extends AppCompatActivity {
            @Override
            public void onClick(View v) {
 
-               //TODO: implementar
-               Toast.makeText(getApplicationContext(), "Apertado botão Cancelar", Toast.LENGTH_LONG).show();
+               new AlertDialog.Builder(ClientePessoaFisicaActivity.this)
+                       .setIcon(R.mipmap.ic_launcher_round)
+                       .setTitle("Confirme o Cancelamento")
+                       .setMessage("Deseja realmente Cancelar ?")
+                       .setNegativeButton("NÃO", new DialogInterface.OnClickListener() {
+                           @Override
+                           public void onClick(DialogInterface dialog, int which) {
+                               Toast.makeText(ClientePessoaFisicaActivity.this, "Continue seu Cadastro...",
+                                       Toast.LENGTH_SHORT).show();
+                           }
+                       })
+                       .setPositiveButton("SIM", new DialogInterface.OnClickListener() {
+                           public void onClick(DialogInterface dialog, int id) {
+                               Toast.makeText(ClientePessoaFisicaActivity.this, "Cancelado com sucesso...", Toast.LENGTH_SHORT).show();
+                               dialog.dismiss(); // Fecha o diálogo
+                           }
+                       })
+                       .create().show();
 
            }
        });
@@ -82,8 +100,8 @@ public class ClientePessoaFisicaActivity extends AppCompatActivity {
         editCPF = findViewById(R.id.editCPF);
         editNomeCompleto = findViewById(R.id.editNomeCompleto);
         btnSalvarContinuarPF = findViewById(R.id.btnSalvarContinuarPF);
-        btnVoltarPessoaFisica = findViewById(R.id.btnVoltarPessoaFisica);
-        btnCancelar = findViewById(R.id.btnCancelarPessoaFisica);
+        btnVoltarPessoaFisica = findViewById(R.id.btnVoltar);
+        btnCancelar = findViewById(R.id.btnCancelar);
 
         isFormularioOk = false;
 

@@ -104,7 +104,9 @@ public class LoginActivity extends AppCompatActivity {
                         .setIcon(R.mipmap.ic_launcher_round)
                         .setMessage("Esta é uma mensagem de exemplo.")
                         .setTitle("Politica de Privcaxcidade & Termos de Uso")
-                        .setMessage("texto texto texto texto texto texto texto texto texto texto texto texto texto texto")
+                        .setMessage("texto texto texto texto texto texto texto texto texto " +
+                                "texto texto texto texto texto texto texto texto texto texto " +
+                                "texto texto texto texto texto texto texto texto texto")
                         .setNegativeButton("Discordo", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

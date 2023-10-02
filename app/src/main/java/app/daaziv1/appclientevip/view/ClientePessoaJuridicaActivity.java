@@ -1,7 +1,6 @@
 package app.daaziv1.appclientevip.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,6 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import app.daaziv1.appclientevip.R;
 import app.daaziv1.appclientevip.api.AppUtil;
@@ -25,7 +28,7 @@ public class ClientePessoaJuridicaActivity extends AppCompatActivity {
 
     EditText editCNPJ, editRazaoSocial, editDataAbertura;
     CheckBox ckSimpleNacional, ckMEI;
-    Button btnSalvarContinuar, btnVoltarPessoaJuridica, btnCancelarPessoaJuridica;
+    Button btnSalvarContinuar, btnVoltarPessoaJuridica, btnCancelar;
 
     boolean isFormularioOk, isSimplesNacional, isMEI;
 
@@ -40,7 +43,7 @@ public class ClientePessoaJuridicaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (isFormularioOk = validarFormulario()){
+                if (isFormularioOk = validarFormulario()) {
 
                     novoClientePJ.setCnpj(editCNPJ.getText().toString());
                     novoClientePJ.setRazaoSocial(editRazaoSocial.getText().toString());
@@ -70,15 +73,41 @@ public class ClientePessoaJuridicaActivity extends AppCompatActivity {
             }
         });
 
+        btnCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                new AlertDialog.Builder(ClientePessoaJuridicaActivity.this)
+                        .setIcon(R.mipmap.ic_launcher_round)
+                        .setTitle("Confirme o Cancelamento")
+                        .setMessage("Deseja realmente Cancelar ?")
+                        .setNegativeButton("NÃO", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(ClientePessoaJuridicaActivity.this, "Continue seu Cadastro...",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setPositiveButton("SIM", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Toast.makeText(ClientePessoaJuridicaActivity.this, "Cancelado com sucesso...", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss(); // Fecha o diálogo
+                            }
+                        })
+                        .create().show();
+
+            }
+        });
+
     }
 
-    public void simplesNacional(View view){
+    public void simplesNacional(View view) {
 
         isSimplesNacional = ckSimpleNacional.isChecked();
 
     }
 
-    public void mei(View view){
+    public void mei(View view) {
 
         isMEI = ckMEI.isChecked();
 
@@ -92,8 +121,8 @@ public class ClientePessoaJuridicaActivity extends AppCompatActivity {
         ckSimpleNacional = findViewById(R.id.ckSimplesNaciona);
         ckMEI = findViewById(R.id.ckMEI);
         btnSalvarContinuar = findViewById(R.id.btnSalvarContinuar);
-        btnVoltarPessoaJuridica = findViewById(R.id.btnVoltarPessoaJuridica);
-        btnCancelarPessoaJuridica = findViewById(R.id.btnCancelarPessoaJuridica);
+        btnVoltarPessoaJuridica = findViewById(R.id.btnVoltar);
+        btnCancelar = findViewById(R.id.btnCancelar);
 
         isFormularioOk = false;
 
@@ -104,23 +133,23 @@ public class ClientePessoaJuridicaActivity extends AppCompatActivity {
 
     }
 
-    public boolean validarFormulario(){
+    public boolean validarFormulario() {
 
         boolean retorno = true;
 
-        if (TextUtils.isEmpty(editCNPJ.getText().toString())){
+        if (TextUtils.isEmpty(editCNPJ.getText().toString())) {
             editCNPJ.setError("*");
             editCNPJ.requestFocus();
             retorno = false;
         }
 
-        if (TextUtils.isEmpty(editRazaoSocial.getText().toString())){
+        if (TextUtils.isEmpty(editRazaoSocial.getText().toString())) {
             editRazaoSocial.setError("*");
             editRazaoSocial.requestFocus();
             retorno = false;
         }
 
-        if (TextUtils.isEmpty(editDataAbertura.getText().toString())){
+        if (TextUtils.isEmpty(editDataAbertura.getText().toString())) {
             editDataAbertura.setError("*");
             editDataAbertura.requestFocus();
             retorno = false;

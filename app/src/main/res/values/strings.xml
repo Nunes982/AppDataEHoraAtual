@@ -48,8 +48,6 @@
     <string name="txtNomeCompleto">Pessoa Física</string>
     <string name="editNomeCompleto">Nome completo igual no CPF...</string>
     <string name="btnSalvarConcluir">SALVAR E CONCLUIR</string>
-    <string name="btnVoltarClienteVip">VOLTAR</string>
-    <string name="btnCancelarPessoaFisica">Cancelar</string>
 
     <!-- tela cliente pessoa juridica-->
     <string name="txtPessoaJuridica">Pessoa Juridica</string>
