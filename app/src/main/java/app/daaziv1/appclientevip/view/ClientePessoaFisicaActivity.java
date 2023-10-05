@@ -27,9 +27,9 @@ public class ClientePessoaFisicaActivity extends AppCompatActivity {
     private SharedPreferences preferences;
 
     EditText editCPF, editNomeCompleto;
-    Button btnSalvarContinuarPF, btnVoltarPessoaFisica, btnCancelar;
+    Button btnSalvarContinuar, btnVoltar, btnCancelar;
 
-    boolean isFormularioOk;
+    boolean isFormularioOk, isPessoaFisica;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,26 +38,34 @@ public class ClientePessoaFisicaActivity extends AppCompatActivity {
 
         initFormulario();
 
-        btnSalvarContinuarPF.setOnClickListener(new View.OnClickListener() {
+        btnSalvarContinuar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (isFormularioOk = validarFormulario()){
+                if (isFormularioOk = validarFormulario()) {
 
                     novoClientePF.setCpf(editCPF.getText().toString());
                     novoClientePF.setNomeCompleto(editNomeCompleto.getText().toString());
 
                     salvarSharedPreferences();
 
-                    Intent intent = new Intent(ClientePessoaFisicaActivity.this, LoginActivity.class);
+                    Intent intent;
+
+                    if (isPessoaFisica)
+
+                        intent = new Intent(ClientePessoaFisicaActivity.this, CredencialDeAcessoActivity.class);
+
+                    else
+
+                        intent = new Intent(ClientePessoaFisicaActivity.this, ClientePessoaJuridicaActivity.class);
+
                     startActivity(intent);
-                    finish();
 
                 }
             }
         });
 
-        btnVoltarPessoaFisica.setOnClickListener(new View.OnClickListener() {
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -68,39 +76,39 @@ public class ClientePessoaFisicaActivity extends AppCompatActivity {
             }
         });
 
-       btnCancelar.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
+        btnCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-               new AlertDialog.Builder(ClientePessoaFisicaActivity.this)
-                       .setIcon(R.mipmap.ic_launcher_round)
-                       .setTitle("Confirme o Cancelamento")
-                       .setMessage("Deseja realmente Cancelar ?")
-                       .setNegativeButton("NÃO", new DialogInterface.OnClickListener() {
-                           @Override
-                           public void onClick(DialogInterface dialog, int which) {
-                               Toast.makeText(ClientePessoaFisicaActivity.this, "Continue seu Cadastro...",
-                                       Toast.LENGTH_SHORT).show();
-                           }
-                       })
-                       .setPositiveButton("SIM", new DialogInterface.OnClickListener() {
-                           public void onClick(DialogInterface dialog, int id) {
-                               Toast.makeText(ClientePessoaFisicaActivity.this, "Cancelado com sucesso...", Toast.LENGTH_SHORT).show();
-                               dialog.dismiss(); // Fecha o diálogo
-                           }
-                       })
-                       .create().show();
+                new AlertDialog.Builder(ClientePessoaFisicaActivity.this)
+                        .setIcon(R.mipmap.ic_launcher_round)
+                        .setTitle("Confirme o Cancelamento")
+                        .setMessage("Deseja realmente Cancelar ?")
+                        .setNegativeButton("NÃO", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(ClientePessoaFisicaActivity.this, "Continue seu Cadastro...",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setPositiveButton("SIM", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Toast.makeText(ClientePessoaFisicaActivity.this, "Cancelado com sucesso...", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss(); // Fecha o diálogo
+                            }
+                        })
+                        .create().show();
 
-           }
-       });
+            }
+        });
     }
 
     private void initFormulario() {
 
         editCPF = findViewById(R.id.editCPF);
         editNomeCompleto = findViewById(R.id.editNomeCompleto);
-        btnSalvarContinuarPF = findViewById(R.id.btnSalvarContinuarPF);
-        btnVoltarPessoaFisica = findViewById(R.id.btnVoltar);
+        btnSalvarContinuar = findViewById(R.id.btnSalvarContinuarPF);
+        btnVoltar = findViewById(R.id.btnVoltar);
         btnCancelar = findViewById(R.id.btnCancelar);
 
         isFormularioOk = false;
@@ -112,17 +120,17 @@ public class ClientePessoaFisicaActivity extends AppCompatActivity {
 
     }
 
-    public boolean validarFormulario(){
+    public boolean validarFormulario() {
 
         boolean retorno = true;
 
-        if (TextUtils.isEmpty(editCPF.getText().toString())){
+        if (TextUtils.isEmpty(editCPF.getText().toString())) {
             editCPF.setError("*");
             editCPF.requestFocus();
             retorno = false;
         }
 
-        if (TextUtils.isEmpty(editNomeCompleto.getText().toString())){
+        if (TextUtils.isEmpty(editNomeCompleto.getText().toString())) {
             editNomeCompleto.setError("*");
             editNomeCompleto.requestFocus();
             retorno = false;
@@ -138,13 +146,16 @@ public class ClientePessoaFisicaActivity extends AppCompatActivity {
         SharedPreferences.Editor dados = preferences.edit();
 
         // Adicionando dados no SharedPreferences
-
+        dados.putString("cpf", editCPF.getText().toString());
+        dados.putString("nomeCompleto", editNomeCompleto.getText().toString());
+        dados.apply();
 
     }
 
     private void restaurarSharedPreferences() {
 
         preferences = getSharedPreferences(AppUtil.PRE_APP, MODE_PRIVATE);
+        isPessoaFisica = preferences.getBoolean("pessoaFisica", true);
 
     }
 

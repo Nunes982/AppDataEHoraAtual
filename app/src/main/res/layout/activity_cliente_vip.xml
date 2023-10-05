@@ -98,7 +98,7 @@
             android:onClick="pessoaFisica"
             android:padding="9dp"
             android:text="@string/ckPessofisica"
-            android:textColor="@color/black"
+            android:textColor="@color/blue"
             android:textStyle="bold" />
 
         <Button

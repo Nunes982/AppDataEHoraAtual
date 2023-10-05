@@ -1,7 +1,9 @@
 package app.daaziv1.appclientevip.view;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -10,11 +12,13 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import app.daaziv1.appclientevip.R;
+import app.daaziv1.appclientevip.api.AppUtil;
 
-public class CadastroUsuarioActivity extends AppCompatActivity {
+public class CredencialDeAcessoActivity extends AppCompatActivity {
 
     // 1º Passo
     Button btnCadastrar;
@@ -24,7 +28,9 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
     EditText editSenhaB;
     CheckBox ckTermo;
 
-    boolean isFormularioOK;
+    private SharedPreferences preferences;
+
+    boolean isFormularioOK, isPessoaFisica;
 
 
     @Override
@@ -85,10 +91,26 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                         editSenhaB.setError("*");
                         editSenhaA.requestFocus();
 
+                        new AlertDialog.Builder(CredencialDeAcessoActivity.this)
+                                .setIcon(R.mipmap.ic_launcher_round)
+                                .setTitle("ATENÇÃO!!!")
+                                .setMessage("As senhas digitadasnão são iguais , por favor tente novamente.")
+                                .setPositiveButton("CONTINUAR", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        Toast.makeText(CredencialDeAcessoActivity.this, "Tente novamente.", Toast.LENGTH_SHORT).show();
+                                        dialog.dismiss(); // Fecha o diálogo
+                                    }
+                                })
+                                .create().show();
+
+
                     }else {
 
-                        Intent iMenuPrincipal = new Intent(CadastroUsuarioActivity.this, MainActivity.class);
+                        salvarSharedPreferences();
+
+                        Intent iMenuPrincipal = new Intent(CredencialDeAcessoActivity.this, LoginActivity.class);
                         startActivity(iMenuPrincipal);
+                        finish();
 
                         Toast.makeText(getApplicationContext(), "Usuário Cadastrado com Sucesso...", Toast.LENGTH_LONG).show();
 
@@ -112,6 +134,8 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
         ckTermo = findViewById(R.id.ckTermo);
 
         isFormularioOK = false;
+
+        restaurarSharedPreferences();
 
     }
 
@@ -140,4 +164,28 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
 
         return retono;
     }
+
+    private void salvarSharedPreferences() {
+
+        preferences = getSharedPreferences(AppUtil.PRE_APP, MODE_PRIVATE);
+        SharedPreferences.Editor dados = preferences.edit();
+
+        dados.putString("email", editEmail.getText().toString());
+        dados.putString("senha", editSenhaA.getText().toString());
+        dados.apply();
+
+    }
+
+    private void restaurarSharedPreferences() {
+
+        preferences = getSharedPreferences(AppUtil.PRE_APP, MODE_PRIVATE);
+        isPessoaFisica = preferences.getBoolean("pessoaFisica", true);
+        if (isPessoaFisica)
+            editNome.setText(preferences.getString("nomeCompleto", "Verifique os dados"));
+        else
+            editNome.setText(preferences.getString("razaoSocial", "Verifique os dados"));
+
+
+    }
+
 }

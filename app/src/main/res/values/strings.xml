@@ -17,7 +17,7 @@
     <string name="txtEmail">Email</string>
     <string name="editNome">Digite seu primeiro nome…</string>
     <string name="txtNome">Nome</string>
-    <string name="txtTitulo">Cadastro</string>
+    <string name="txtFinalizacaoCadastro">Credenciais de Acesso</string>
 
     <!--Tela Login -->
     <string name="txtLogin">Login</string>
@@ -66,6 +66,11 @@
     <string name="txtEmailRecuperarSenha">E-mail</string>
     <string name="editEmailRecuperarSenha">Digite o e-mail cadastrado...</string>
     <string name="btnRecuperarSenha">Recuperar</string>
-    
+    <string name="btnMeusDados">MEUS DADOS</string>
+    <string name="btnAtualizarMeusDados">ATUALIZAR MEUS DADOS</string>
+    <string name="btnExcluirMinhaConta">EXCLUIR MINHA CONTA</string>
+    <string name="btnConsultarClientesVip">CONSULTAR CLIENTES VIP</string>
+    <string name="btnSairDoAplicativo">SAIR DO APLICATIVO</string>
+
 
 </resources>

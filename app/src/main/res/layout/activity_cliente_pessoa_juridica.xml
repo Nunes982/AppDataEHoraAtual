@@ -13,8 +13,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txtAppName"
+        <TextView android:id="@+id/txtAppName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -25,8 +24,7 @@
             android:textSize="36sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/txtPessoaJuridica"
+        <TextView android:id="@+id/txtPessoaJuridica"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -37,8 +35,7 @@
             android:textSize="36sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/txtCNPJ"
+        <TextView android:id="@+id/txtCNPJ"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -47,8 +44,7 @@
             android:text="@string/txtCNPJ"
             android:textColor="@color/green" />
 
-        <EditText
-            android:id="@+id/editCNPJ"
+        <EditText android:id="@+id/editCNPJ"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
@@ -59,8 +55,7 @@
             android:inputType="number"
             android:textColorHint="@color/black" />
 
-        <TextView
-            android:id="@+id/txtRazaoSocial"
+        <TextView android:id="@+id/txtRazaoSocial"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -70,8 +65,7 @@
             android:text="@string/txtRazaoSocial"
             android:textColor="@color/green" />
 
-        <EditText
-            android:id="@+id/editRazaoSocial"
+        <EditText android:id="@+id/editRazaoSocial"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
@@ -82,8 +76,7 @@
             android:inputType="text"
             android:textColorHint="@color/black" />
 
-        <TextView
-            android:id="@+id/txtDataAbertura"
+        <TextView android:id="@+id/txtDataAbertura"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -93,8 +86,7 @@
             android:text="@string/txtDataAbertura"
             android:textColor="@color/green" />
 
-        <EditText
-            android:id="@+id/editDataAbertura"
+        <EditText android:id="@+id/editDataAbertura"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
@@ -105,8 +97,7 @@
             android:inputType="date"
             android:textColorHint="@color/black" />
 
-        <CheckBox
-            android:id="@+id/ckSimplesNaciona"
+        <CheckBox android:id="@+id/ckSimplesNaciona"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -118,8 +109,7 @@
             android:textColor="@color/black"
             android:textStyle="bold" />
 
-        <CheckBox
-            android:id="@+id/ckMEI"
+        <CheckBox android:id="@+id/ckMEI"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -131,8 +121,7 @@
             android:textColor="@color/black"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnSalvarContinuar"
+        <Button android:id="@+id/btnSalvarContinuar"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
@@ -148,8 +137,7 @@
             android:baselineAligned="true"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btnVoltar"
+            <Button android:id="@+id/btnVoltar"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
@@ -159,8 +147,7 @@
                 android:text="@string/btnVoltar"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btnCancelar"
+            <Button android:id="@+id/btnCancelar"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"

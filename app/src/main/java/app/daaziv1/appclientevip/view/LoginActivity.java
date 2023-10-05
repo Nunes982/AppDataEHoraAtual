@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
 
     // Declarar Objeto
 
-    Cliente clienteFake;
+    Cliente cliente;
 
     SharedPreferences preferences;
 
@@ -161,7 +161,7 @@ public class LoginActivity extends AppCompatActivity {
 
         isFormularioOk = false;
 
-        clienteFake = ClienteController.getClienteFake();
+        cliente = new Cliente();
 
         salvarSharedPreferences();
         restaurarSharedPreferences();
@@ -176,7 +176,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public boolean validarDadosDoUsuario() {
 
-        return ClienteController.validarDadosDoCliente(clienteFake,
+        return ClienteController.validarDadosDoCliente(cliente,
                 editEmailLogin.getText().toString(),
                 editSenhaLogin.getText().toString());
 
@@ -187,19 +187,18 @@ public class LoginActivity extends AppCompatActivity {
         preferences = getSharedPreferences(AppUtil.PRE_APP, MODE_PRIVATE);
         SharedPreferences.Editor dados = preferences.edit();
 
-        // Adicionando dados no SharedPreferences
-
-//        dados.putBoolean("loginAutomativo", isLembrarSenha );
-//        dados.putString("emailCliente", editEmailLogin.getText().toString());
-//        dados.putString("senhaCliente", editSenhaLogin.getText().toString());
-//
-//        dados.apply();
-
     }
 
     private void restaurarSharedPreferences() {
 
         preferences = getSharedPreferences(AppUtil.PRE_APP, MODE_PRIVATE);
+
+        cliente.setEmail(preferences.getString("email", "teste@teste.com"));
+        cliente.setSenha(preferences.getString("senha", "12345"));
+        cliente.setPrimeiroNome(preferences.getString("primeiroNome", "Cliente"));
+        cliente.setSobreNome(preferences.getString("sobreNome", "Fake"));
+        cliente.setPessoaFisica(preferences.getBoolean("pessoaFisica", true));
+
         isLembrarSenha = preferences.getBoolean("loginAutomativo", false);
 
     }

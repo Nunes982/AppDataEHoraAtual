@@ -28,7 +28,7 @@ public class ClientePessoaJuridicaActivity extends AppCompatActivity {
 
     EditText editCNPJ, editRazaoSocial, editDataAbertura;
     CheckBox ckSimpleNacional, ckMEI;
-    Button btnSalvarContinuar, btnVoltarPessoaJuridica, btnCancelar;
+    Button btnSalvarContinuar, btnVoltar, btnCancelar;
 
     boolean isFormularioOk, isSimplesNacional, isMEI;
 
@@ -53,16 +53,15 @@ public class ClientePessoaJuridicaActivity extends AppCompatActivity {
 
                     salvarSharedPreferences();
 
-                    Intent intent = new Intent(ClientePessoaJuridicaActivity.this, LoginActivity.class);
+                    Intent intent = new Intent(ClientePessoaJuridicaActivity.this, CredencialDeAcessoActivity.class);
                     startActivity(intent);
-                    finish();
 
                 }
 
             }
         });
 
-        btnVoltarPessoaJuridica.setOnClickListener(new View.OnClickListener() {
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -121,7 +120,7 @@ public class ClientePessoaJuridicaActivity extends AppCompatActivity {
         ckSimpleNacional = findViewById(R.id.ckSimplesNaciona);
         ckMEI = findViewById(R.id.ckMEI);
         btnSalvarContinuar = findViewById(R.id.btnSalvarContinuar);
-        btnVoltarPessoaJuridica = findViewById(R.id.btnVoltar);
+        btnVoltar = findViewById(R.id.btnVoltar);
         btnCancelar = findViewById(R.id.btnCancelar);
 
         isFormularioOk = false;
@@ -165,6 +164,12 @@ public class ClientePessoaJuridicaActivity extends AppCompatActivity {
         SharedPreferences.Editor dados = preferences.edit();
 
         // Adicionando dados no SharedPreferences
+        dados.putString("cnpj", editCNPJ.getText().toString());
+        dados.putString("razaoSocial", editRazaoSocial.getText().toString());
+        dados.putString("dataAbertura", editDataAbertura.getText().toString());
+        dados.putBoolean("simplesNacional", isSimplesNacional);
+        dados.putBoolean("mei", isMEI);
+        dados.apply();
 
 
     }

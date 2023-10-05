@@ -44,7 +44,7 @@ public class ClienteVipActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (isFormularioOk = validarFormulario()){
+                if (isFormularioOk = validarFormulario()) {
 
                     novoVip.setPrimeiroNome(editPrimeiroNome.getText().toString());
                     novoVip.setSobreNome(editSobreNome.getText().toString());
@@ -52,27 +52,12 @@ public class ClienteVipActivity extends AppCompatActivity {
 
                     salvarSharedPreferences();
 
-                    if (isPessoaFisica){
+                    // Tela de Cadastro do CPF
 
-                        // Tela de Cadastro do CPF
-
-                        Intent intent = new Intent(ClienteVipActivity.this, ClientePessoaFisicaActivity.class);
-                        startActivity(intent);
-                        finish();
-
-
-                    }else{
-
-                        // Tela de cadastro de CNPJ
-
-                        Intent intent = new Intent(ClienteVipActivity.this, ClientePessoaJuridicaActivity.class);
-                        startActivity(intent);
-                        finish();
-
-                    }
+                    Intent intent = new Intent(ClienteVipActivity.this, ClientePessoaFisicaActivity.class);
+                    startActivity(intent);
 
                 }
-
             }
         });
 
@@ -119,18 +104,19 @@ public class ClienteVipActivity extends AppCompatActivity {
         restaurarSharedPreferences();
 
     }
-    public boolean validarFormulario(){
+
+    public boolean validarFormulario() {
 
 
         boolean isFormularioOk = true;
 
-        if (TextUtils.isEmpty(editPrimeiroNome.getText().toString())){
+        if (TextUtils.isEmpty(editPrimeiroNome.getText().toString())) {
             editPrimeiroNome.setError("*");
             editPrimeiroNome.requestFocus();
             isFormularioOk = false;
         }
 
-        if (TextUtils.isEmpty(editSobreNome.getText().toString())){
+        if (TextUtils.isEmpty(editSobreNome.getText().toString())) {
             editSobreNome.setError("*");
             editSobreNome.requestFocus();
             isFormularioOk = false;
@@ -140,7 +126,7 @@ public class ClienteVipActivity extends AppCompatActivity {
 
     }
 
-    public void pessoaFisica(View view){
+    public void pessoaFisica(View view) {
 
         isPessoaFisica = ckPessofisica.isChecked();
 
@@ -155,7 +141,7 @@ public class ClienteVipActivity extends AppCompatActivity {
 
         dados.putString("primeiroNome", novoVip.getPrimeiroNome());
         dados.putString("sobreNome", novoVip.getSobreNome());
-        dados.putBoolean("pessoaFisica",novoVip.isPessoaFisica());
+        dados.putBoolean("pessoaFisica", novoVip.isPessoaFisica());
         dados.apply();
 
     }
