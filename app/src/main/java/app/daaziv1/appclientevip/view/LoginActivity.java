@@ -187,6 +187,9 @@ public class LoginActivity extends AppCompatActivity {
         preferences = getSharedPreferences(AppUtil.PRE_APP, MODE_PRIVATE);
         SharedPreferences.Editor dados = preferences.edit();
 
+        dados.putBoolean("loginAutomativo", isLembrarSenha);
+        dados.apply();
+
     }
 
     private void restaurarSharedPreferences() {
